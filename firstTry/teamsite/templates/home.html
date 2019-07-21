@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+KEYFINDER
+</title>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="{% static 'js/conversion.js' %}"></script>
+
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+</head>
+<body>
+<style>
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+  }
+  </style>
+  <div class="loader" id="gif">Loading...</div>
+<div class="jumbotron text-center" id="mainComponent">
+  <h1><a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Key Finder.", "I am Creative.", "I will give you the path,location"]'>
+    <span class="wrap"></span>
+  </a></h1> 
+  <p>Enter the value to be searched</p> 
+  <form class="form-inline" action="" method="get" id="login_form" onSubmit="submitSearch()">
+	<input  type="hidden" id="transText" name="transText">
+    <div class="">
+	 <div class="dropdown" >
+	  <select class="form-control" id="market" name="marketName">
+	  {% for market in marketList %}
+	  <option class="form-control" value="{{market}}">{{market}}</option>
+	  {% endfor %}
+	  </select>	
+	  
+	   <select class="form-control" id="propTypes" name="propTypes">
+	  {% for type in propTypes %}
+	  <option class="form-control" value="{{type}}">{{type}}</option>
+	  {% endfor %}
+	  </select>	
+	  </div>
+	  
+	  <div class="input-group">
+      <input type="text" class="form-control" size="50" placeholder="Search Value" name="inputText" onkeyup="convertChar2CP( this.value )"  required>
+      <div class="input-group-btn">
+		<input type="submit"   value="search" class="btn btn-danger">
+      </div>
+	  </div>
+    </div>
+  </form>
+  
+ 
+	<br>
+	<div class="container">
+	{% for keySet in keyDetails %}
+	  <div class="card">
+		<div class="card-body ">
+		<span id="details">ServerPathName<span id="colon1">:</span></span> <span id="pathColor">{{ keySet.PathName }}</span><br>
+		<span id="details">TeamsitePathName<span id="colon2">:</span></span> <span id="pathColor">{{ keySet.TeamSitePathName }}</span><br>
+		<span id="details">FileName<span id="colon3">:</span></span> <span id="fileColor">{{ keySet.FileName }}</span><br>
+		<span id="details">KeyName<span id="colon4">:</span></span> <span class="keyColor" >{{ keySet.KeyName }}</span><br>
+		<span id="details">UnicodedKey<span id="colon5">:</span></span> <span class="keyUniColor">{{ keySet.KeyName }}</span><br>
+		</div> 
+	  </div>
+	{% endfor %}
+	</div>
+	
+</div>
+
+</body> 
+</html>

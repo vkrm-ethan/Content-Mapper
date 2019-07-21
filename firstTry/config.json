@@ -1,0 +1,32 @@
+{
+  "fileTypes": {
+    ".*_cm.properties": "/WebE_FLD/WORKAREA/avon-ru/REPSuite/contentmanaged/webepages/core/sharedcontent/properties",
+    ".*_tr.properties": "/WebE_FLD/WORKAREA/avon-ru/REPSuite/contentmanaged/webepages/core/sharedcontent/translation",
+    ".*_errorMsg.properties": "/WebE_FLD/WORKAREA/avon-ru/REPSuite/contentmanaged/webepages/core/errorMsg"
+  },
+  "marketList": [
+    "Russia",
+    "Romania",
+    "Canada",
+    "USA"
+  ],
+  "excludeProperties": ".*exclusive.*|.*demo.*|.*ebrochure.*",
+  "teamsiteBasePath": "//ryemspcm2/default/main/Global_Internet/Cluster_Eastern_Europe/",
+  "propTypes": [
+    "TS",
+    "NTS"
+  ],
+  "deciderPath": "D:\\Properties\\",
+  "suiteList": [
+    "REPSuite"
+  ],
+  "foldStruct": {
+    "content": [
+      "errorMsg",
+      "cm",
+      "translation",
+      "help"
+    ],
+	"NTSFolders" : ["config", "developer-controlled"]
+  }
+}
